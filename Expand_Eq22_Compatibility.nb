@@ -1,0 +1,837 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     29069,        829]
+NotebookOptionsPosition[     27751,        801]
+NotebookOutlinePosition[     28186,        818]
+CellTagsIndexPosition[     28143,        815]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], "*)"}],
+   "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\:05d7\:05dc\:05e7", " ", 
+      RowBox[{"\:05d0", "'"}]}], ":", 
+     RowBox[{
+     "\:05e4\:05ea\:05d9\:05d7\:05d4", " ", 
+      "\:05e1\:05d9\:05de\:05d1\:05d5\:05dc\:05d9\:05ea", " ", "\:05e9\:05dc",
+       " ", "\:05de\:05e9\:05d5\:05d5\:05d0\:05d4", " ", 
+      RowBox[{"(", "22", ")"}]}], ":", 
+     RowBox[{"A", 
+      RowBox[{
+       RowBox[{"(", "w", ")"}], "^", "2"}]}]}], "=", 
+    RowBox[{"B", 
+     RowBox[{
+      RowBox[{"(", "w", ")"}], "^", "2"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"Style", "[", 
+     RowBox[{"\"\<=== Part 1: Symbolic Expansion of Eq. (22): A(w)^2 = B(w)^2 \
+===\>\"", ",", "Bold", ",", "15", ",", "Blue"}], "]"}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"qRule", "=", 
+   RowBox[{
+    RowBox[{"q", "[", 
+     RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+    RowBox[{
+     RowBox[{"w", "[", 
+      RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+     RowBox[{"wbar", "[", 
+      RowBox[{"z", ",", "zbar"}], "]"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pRule", "=", 
+    RowBox[{
+     RowBox[{"p", "[", 
+      RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+     RowBox[{"4", "*", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Derivative", "[", 
+         RowBox[{"0", ",", "1"}], "]"}], "[", "w", "]"}], "[", 
+       RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Derivative", "[", 
+         RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+       RowBox[{"z", ",", "zbar"}], "]"}]}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"nEvenExpr", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"q", "[", 
+       RowBox[{"z", ",", "zbar"}], "]"}]}], "/", 
+     RowBox[{"(", 
+      RowBox[{"2", "*", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}]}], ")"}]}], "/.", " ", "qRule"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"nOddExpr", "=", 
+    RowBox[{"I", "*", 
+     RowBox[{
+      RowBox[{"R", "[", 
+       RowBox[{"z", ",", "zbar"}], "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Derivative", "[", 
+           RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+         RowBox[{"z", ",", "zbar"}], "]"}]}], ")"}]}]}]}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"1.", " ", "\:05d7\:05d9\:05e9\:05d5\:05d1", " ", "A", 
+     RowBox[{"(", "w", ")"}]}], "=", 
+    RowBox[{"w", "-", 
+     RowBox[{"2", "*", "d_z", 
+      RowBox[{"(", "n_even", ")"}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AwSymbolic", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"w", "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "-", 
+       RowBox[{"2", "*", 
+        RowBox[{"D", "[", 
+         RowBox[{"nEvenExpr", ",", "z"}], "]"}]}]}], "//", "Together"}], "//",
+      "Simplify"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"2.", " ", "\:05d7\:05d9\:05e9\:05d5\:05d1", " ", "B", 
+     RowBox[{"(", "w", ")"}]}], "=", 
+    RowBox[{"2", "*", "d_z", 
+     RowBox[{"(", "n_odd", ")"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dRz", "=", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"p", "[", 
+          RowBox[{"z", ",", "zbar"}], "]"}], "-", 
+         RowBox[{
+          RowBox[{"q", "[", 
+           RowBox[{"z", ",", "zbar"}], "]"}], "^", "2"}]}], "]"}], ",", "z"}],
+       "]"}], "/.", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"p", "[", 
+           RowBox[{"z", ",", "zbar"}], "]"}], "-", 
+          RowBox[{
+           RowBox[{"q", "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "^", "2"}]}], "]"}], "->", 
+        "RSymbol"}], ",", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"q", "[", 
+           RowBox[{"z", ",", "zbar"}], "]"}], ",", "z"}], "]"}], "->", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"w", "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+           RowBox[{"wbar", "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}]}], ",", "z"}], "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"p", "[", 
+           RowBox[{"z", ",", "zbar"}], "]"}], ",", "z"}], "]"}], "->", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"4", "*", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Derivative", "[", 
+              RowBox[{"0", ",", "1"}], "]"}], "[", "w", "]"}], "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Derivative", "[", 
+              RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}]}], ",", "z"}], "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"q", "[", 
+         RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+        RowBox[{
+         RowBox[{"w", "[", 
+          RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+         RowBox[{"wbar", "[", 
+          RowBox[{"z", ",", "zbar"}], "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"p", "[", 
+         RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+        RowBox[{"4", "*", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Derivative", "[", 
+            RowBox[{"0", ",", "1"}], "]"}], "[", "w", "]"}], "[", 
+          RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Derivative", "[", 
+            RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+          RowBox[{"z", ",", "zbar"}], "]"}]}]}]}], "}"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"BwSymbolic", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", "*", 
+         RowBox[{"D", "[", 
+          RowBox[{"nOddExpr", ",", "z"}], "]"}]}], "/.", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Derivative", "[", 
+              RowBox[{"1", ",", "0"}], "]"}], "[", "R", "]"}], "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "->", "dRz"}], ",", 
+          RowBox[{
+           RowBox[{"R", "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "->", "RSymbol"}]}], "}"}]}], 
+       ")"}], "/.", " ", 
+      RowBox[{
+       RowBox[{"RSymbol", "^", "2"}], "->", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4", "*", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Derivative", "[", 
+             RowBox[{"0", ",", "1"}], "]"}], "[", "w", "]"}], "[", 
+           RowBox[{"z", ",", "zbar"}], "]"}], "*", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Derivative", "[", 
+             RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+           RowBox[{"z", ",", "zbar"}], "]"}]}], "-", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"w", "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "^", "2"}], "*", 
+          RowBox[{
+           RowBox[{"wbar", "[", 
+            RowBox[{"z", ",", "zbar"}], "]"}], "^", "2"}]}]}], ")"}]}]}], "//",
+      "Simplify"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:05d4\:05d7\:05dc\:05e4\:05ea", " ", 
+    "\:05e1\:05d9\:05de\:05d5\:05e0\:05d9\:05dd", " ", 
+    "\:05dc\:05ea\:05e6\:05d5\:05d2\:05d4", " ", 
+    "\:05de\:05ea\:05de\:05d8\:05d9\:05ea", " ", 
+    "\:05e0\:05e7\:05d9\:05d9\:05d4"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"displayRules", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"w", "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", "wSym"}], ",", 
+      RowBox[{
+       RowBox[{"wbar", "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", "wbarSym"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"1", ",", "0"}], "]"}], "[", "w", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+       RowBox[{"DzW", "/", "2"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"0", ",", "1"}], "]"}], "[", "w", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+       RowBox[{"DzbarW", "/", "2"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"1", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+       RowBox[{"DzWbar", "/", "2"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"0", ",", "1"}], "]"}], "[", "wbar", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+       RowBox[{"DzbarWbar", "/", "2"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"1", ",", "1"}], "]"}], "[", "w", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+       RowBox[{"LaplacianW", "/", "4"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Derivative", "[", 
+          RowBox[{"2", ",", "0"}], "]"}], "[", "wbar", "]"}], "[", 
+        RowBox[{"z", ",", "zbar"}], "]"}], "->", 
+       RowBox[{"DzzWbar", "/", "4"}]}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"AwClean", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"AwSymbolic", "/.", " ", "displayRules"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"BwClean", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"BwSymbolic", "/.", " ", "displayRules"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"R2Clean", "=", 
+    RowBox[{
+     RowBox[{"DzbarW", "*", "DzWbar"}], "-", 
+     RowBox[{
+      RowBox[{"wSym", "^", "2"}], "*", 
+      RowBox[{"wbarSym", "^", "2"}]}]}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"Style", "[", 
+    RowBox[{"\"\<\\n1. Explicit expanded form of A(w) = w - 2 \
+d_z(n_even):\>\"", ",", "Bold", ",", "13", ",", 
+     RowBox[{"Darker", "[", "Blue", "]"}]}], "]"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<A(w) = \>\"", ",", 
+     RowBox[{"Collect", "[", 
+      RowBox[{"AwClean", ",", 
+       RowBox[{"{", 
+        RowBox[{"wSym", ",", "DzW", ",", "DzzWbar"}], "}"}], ",", 
+       "Simplify"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"Style", "[", 
+    RowBox[{"\"\<\\n2. Explicit expanded form of B(w) = 2 d_z(n_odd):\>\"", ",",
+      "Bold", ",", "13", ",", 
+     RowBox[{"Darker", "[", "Blue", "]"}]}], "]"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<B(w) = \>\"", ",", 
+     RowBox[{"Collect", "[", 
+      RowBox[{"BwClean", ",", 
+       RowBox[{"{", 
+        RowBox[{"LaplacianW", ",", "DzzWbar", ",", "DzW", ",", "wSym"}], 
+        "}"}], ",", "Simplify"}], "]"}]}], "]"}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "3.", " ", "\:05d4\:05e8\:05db\:05d1\:05ea", " ", 
+     "\:05de\:05e9\:05d5\:05d5\:05d0\:05d4", " ", 
+     RowBox[{"(", "22", ")"}], " ", 
+     RowBox[{"\:05d4\:05de\:05dc\:05d0\:05d4", ":", 
+      RowBox[{"\:05d4\:05e6\:05d1\:05ea", " ", "RSymbol"}]}]}], "->", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", "R2Clean", "]"}], " ", "\:05dc\:05e4\:05e0\:05d9", " ",
+      "\:05d4\:05e2\:05dc\:05d0\:05d4", " ", 
+     "\:05d1\:05e8\:05d9\:05d1\:05d5\:05e2", " ", 
+     "\:05de\:05d1\:05d8\:05dc\:05ea", " ", "\:05d0\:05ea", " ", "RSymbol", " ",
+      "\:05d2\:05dd", " ", "\:05d1\:05de\:05db\:05e0\:05d4"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Eq22Expanded", "=", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{
+      RowBox[{"AwClean", "^", "2"}], "-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"BwClean", "/.", " ", 
+          RowBox[{"RSymbol", "->", 
+           RowBox[{"Sqrt", "[", "R2Clean", "]"}]}]}], ")"}], "^", "2"}], 
+       ")"}]}], "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"Style", "[", 
+    RowBox[{"\"\<\\n3. Expanded Sign-Independent Compatibility Equation \
+A(w)^2 - B(w)^2 == 0 (Eq. 22):\>\"", ",", "Bold", ",", "13", ",", 
+     RowBox[{"Darker", "[", "Green", "]"}]}], "]"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"Eq22Expanded", "==", "0"}], "]"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], "*)"}],
+   "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"\:05d7\:05dc\:05e7", " ", 
+     RowBox[{"\:05d1", "'"}]}], ":", 
+    RowBox[{
+    "\:05d1\:05d3\:05d9\:05e7\:05ea", " ", 
+     "\:05d4\:05de\:05e9\:05d5\:05d5\:05d0\:05d4", " ", 
+     "\:05d4\:05de\:05e4\:05d5\:05ea\:05d7\:05ea", " ", "\:05e2\:05dc", " ", 
+     "\:05e4\:05d5\:05e0\:05e7\:05e6\:05d9\:05d5\:05ea", " ", 
+     "\:05d6\:05d5\:05d5\:05d9\:05ea", " ", "theta", 
+     RowBox[{"(", 
+      RowBox[{"x", ",", "y"}], ")"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "==="}], "="}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"Style", "[", 
+     RowBox[{"\"\<\\n=== Part 2: Verifying Expanded Eq. (22) on Test Director \
+Fields ===\>\"", ",", "Bold", ",", "15", ",", "Blue"}], "]"}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"twoDz", "[", "f_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{"f", ",", "x"}], "]"}], "-", 
+    RowBox[{"I", "*", 
+     RowBox[{"D", "[", 
+      RowBox[{"f", ",", "y"}], "]"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"twoDzbar", "[", "f_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{"f", ",", "x"}], "]"}], "+", 
+    RowBox[{"I", "*", 
+     RowBox[{"D", "[", 
+      RowBox[{"f", ",", "y"}], "]"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"conj", "[", "expr_", "]"}], ":=", 
+    RowBox[{"ComplexExpand", "[", 
+     RowBox[{
+      RowBox[{"Conjugate", "[", "expr", "]"}], ",", 
+      RowBox[{"TargetFunctions", "->", 
+       RowBox[{"{", 
+        RowBox[{"Re", ",", "Im"}], "}"}]}]}], "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"thetaTest", "[", 
+     RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+    RowBox[{"x", "^", "3"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "\:05e9\:05d3\:05d4", " ", "\:05e9\:05d1\:05d5", " ", 
+      "\:05d4\:05dc\:05e4\:05dc\:05e1\:05d9\:05d0\:05df", " ", "6", "x", " ", 
+      "\:05de\:05d7\:05dc\:05d9\:05e3", " ", "\:05e1\:05d9\:05de\:05df", " ", 
+      "\:05d1"}], "-", "x"}], "=", "0"}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"nTest", "=", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", "*", 
+     RowBox[{"thetaTest", "[", 
+      RowBox[{"x", ",", "y"}], "]"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"wTest", "=", 
+   RowBox[{"ComplexExpand", "[", 
+    RowBox[{"twoDz", "[", "nTest", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"wbarTest", "=", 
+    RowBox[{"conj", "[", "wTest", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"evalRules", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"wSym", "->", "wTest"}], ",", 
+      RowBox[{"wbarSym", "->", "wbarTest"}], ",", 
+      RowBox[{"DzW", "->", 
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"twoDz", "[", "wTest", "]"}], "]"}]}], ",", 
+      RowBox[{"DzbarW", "->", 
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"twoDzbar", "[", "wTest", "]"}], "]"}]}], ",", 
+      RowBox[{"DzWbar", "->", 
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"twoDz", "[", "wbarTest", "]"}], "]"}]}], ",", 
+      RowBox[{"DzbarWbar", "->", 
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"twoDzbar", "[", "wbarTest", "]"}], "]"}]}], ",", 
+      RowBox[{"LaplacianW", "->", 
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"twoDz", "[", 
+         RowBox[{"twoDzbar", "[", "wTest", "]"}], "]"}], "]"}]}], ",", 
+      RowBox[{"DzzWbar", "->", 
+       RowBox[{"ComplexExpand", "[", 
+        RowBox[{"twoDz", "[", 
+         RowBox[{"twoDz", "[", "wbarTest", "]"}], "]"}], "]"}]}], ",", 
+      RowBox[{"RSymbol", "->", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"ComplexExpand", "[", 
+          RowBox[{
+           RowBox[{"twoDzbar", "[", "wTest", "]"}], "*", 
+           RowBox[{"twoDz", "[", "wbarTest", "]"}]}], "]"}], "-", 
+         RowBox[{
+          RowBox[{"wTest", "^", "2"}], "*", 
+          RowBox[{"wbarTest", "^", "2"}]}]}], "]"}]}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"residualEq22", "=", 
+    RowBox[{"FullSimplify", "[", 
+     RowBox[{
+      RowBox[{"ComplexExpand", "[", 
+       RowBox[{"Eq22Expanded", "/.", " ", "evalRules"}], "]"}], ",", 
+      RowBox[{"Assumptions", "->", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "\[Element]", "Reals"}], ",", 
+         RowBox[{"y", "\[Element]", "Reals"}]}], "}"}]}]}], "]"}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Residual of Expanded Eq. (22) for theta(x,y) = x^3 (should be \
+0): \>\"", ",", "residualEq22"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{4.0031439909149437`*^9, 4.0031440143771152`*^9}, {
+  4.0031443198865414`*^9, 4.0031443227462845`*^9}, {4.0031475373420334`*^9, 
+  4.0031475657506733`*^9}, {4.0031605321253853`*^9, 4.00316055333152*^9}},
+ CellLabel->
+  "In[201]:=",ExpressionUUID->"2381432e-a477-584e-8413-3c176a602576"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox["\<\"=== Part 1: Symbolic Expansion of Eq. (22): A(w)^2 = B(w)^2 \
+===\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[0, 0, 1],
+  FrontFaceColor->RGBColor[0, 0, 1],
+  BackFaceColor->RGBColor[0, 0, 1],
+  GraphicsColor->RGBColor[0, 0, 1],
+  FontSize->15,
+  FontWeight->Bold,
+  FontColor->RGBColor[0, 0, 1]]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.003160557256525*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"6166aea4-8cae-134c-bb1d-df7081e99c75"],
+
+Cell[BoxData[
+ StyleBox["\<\"\\n1. Explicit expanded form of A(w) = w - 2 d_z(n_even):\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  FrontFaceColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  BackFaceColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  GraphicsColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  FontSize->13,
+  FontWeight->Bold,
+  FontColor->RGBColor[0, 0, 
+    Rational[2, 3]]]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.003160557256525*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"e60c2d3d-96c7-8e42-b7a9-19d2a80181bb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"A(w) = \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"DzW", " ", "wbarSym"}], "DzWbar"], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"2", "-", 
+       FractionBox[
+        RowBox[{"DzzWbar", " ", "wbarSym"}], 
+        SuperscriptBox["DzWbar", "2"]]}], ")"}], " ", "wSym"}]}]}],
+  SequenceForm[
+  "A(w) = ", $CellContext`DzW $CellContext`DzWbar^(-1) $CellContext`wbarSym + \
+(2 - $CellContext`DzWbar^(-2) $CellContext`DzzWbar $CellContext`wbarSym) \
+$CellContext`wSym],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.003160557259491*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"a2fbab35-c123-6543-8d73-b6301736f1b4"],
+
+Cell[BoxData[
+ StyleBox["\<\"\\n2. Explicit expanded form of B(w) = 2 d_z(n_odd):\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  FrontFaceColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  BackFaceColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  GraphicsColor->RGBColor[0, 0, 
+    Rational[2, 3]],
+  FontSize->13,
+  FontWeight->Bold,
+  FontColor->RGBColor[0, 0, 
+    Rational[2, 3]]]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.0031605572635403`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"c171d64b-207c-d84f-9f5a-13ff48b459b6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"B(w) = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"\[ImaginaryI]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"DzzWbar", " ", "RSymbol"}], "+", 
+        FractionBox[
+         RowBox[{"DzWbar", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "DzbarW"}], " ", "DzzWbar"}], "-", 
+            RowBox[{"DzWbar", " ", "LaplacianW"}], "+", 
+            RowBox[{"2", " ", "DzW", " ", 
+             SuperscriptBox["wbarSym", "2"], " ", "wSym"}], "+", 
+            RowBox[{"2", " ", "DzWbar", " ", "wbarSym", " ", 
+             SuperscriptBox["wSym", "2"]}]}], ")"}]}], 
+         RowBox[{"2", " ", 
+          SqrtBox[
+           RowBox[{
+            RowBox[{"DzbarW", " ", "DzWbar"}], "-", 
+            RowBox[{
+             SuperscriptBox["wbarSym", "2"], " ", 
+             SuperscriptBox["wSym", "2"]}]}]]}]]}], ")"}]}], 
+     SuperscriptBox["DzWbar", "2"]]}]}],
+  SequenceForm[
+  "B(w) = ", 
+   Complex[0, -1] $CellContext`DzWbar^(-2) ($CellContext`DzzWbar \
+$CellContext`RSymbol + 
+    Rational[1, 
+       2] $CellContext`DzWbar (-$CellContext`DzbarW $CellContext`DzzWbar - \
+$CellContext`DzWbar $CellContext`LaplacianW + 
+      2 $CellContext`DzW $CellContext`wbarSym^2 $CellContext`wSym + 
+      2 $CellContext`DzWbar $CellContext`wbarSym $CellContext`wSym^2) \
+($CellContext`DzbarW $CellContext`DzWbar - $CellContext`wbarSym^2 \
+$CellContext`wSym^2)^Rational[-1, 2])],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.0031605572635403`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"ef7cea58-ddbe-9c43-8beb-d9250fa73d16"],
+
+Cell[BoxData[
+ StyleBox["\<\"\\n3. Expanded Sign-Independent Compatibility Equation A(w)^2 \
+- B(w)^2 == 0 (Eq. 22):\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[0, 
+    Rational[2, 3], 0],
+  FrontFaceColor->RGBColor[0, 
+    Rational[2, 3], 0],
+  BackFaceColor->RGBColor[0, 
+    Rational[2, 3], 0],
+  GraphicsColor->RGBColor[0, 
+    Rational[2, 3], 0],
+  FontSize->13,
+  FontWeight->Bold,
+  FontColor->RGBColor[0, 
+    Rational[2, 3], 0]]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.0031605572672443`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"f2fd2348-ee8a-d846-b7db-4e2d1b279cd9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"DzW", " ", "wbarSym"}], "DzWbar"], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"2", "-", 
+         FractionBox[
+          RowBox[{"DzzWbar", " ", "wbarSym"}], 
+          SuperscriptBox["DzWbar", "2"]]}], ")"}], " ", "wSym"}]}], ")"}], 
+    "2"], "+", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"DzbarW", " ", "DzWbar", " ", "DzzWbar"}], "+", 
+       RowBox[{"2", " ", "DzW", " ", "DzWbar", " ", 
+        SuperscriptBox["wbarSym", "2"], " ", "wSym"}], "-", 
+       RowBox[{"2", " ", "DzzWbar", " ", 
+        SuperscriptBox["wbarSym", "2"], " ", 
+        SuperscriptBox["wSym", "2"]}], "-", 
+       RowBox[{
+        SuperscriptBox["DzWbar", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"LaplacianW", "-", 
+          RowBox[{"2", " ", "wbarSym", " ", 
+           SuperscriptBox["wSym", "2"]}]}], ")"}]}]}], ")"}], "2"], 
+    RowBox[{"4", " ", 
+     SuperscriptBox["DzWbar", "4"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"DzbarW", " ", "DzWbar"}], "-", 
+       RowBox[{
+        SuperscriptBox["wbarSym", "2"], " ", 
+        SuperscriptBox["wSym", "2"]}]}], ")"}]}]]}], "\[Equal]", 
+  "0"}]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.0031605572692757`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"fff3f042-d5f5-0d4b-9f0b-405673335f5b"],
+
+Cell[BoxData[
+ StyleBox["\<\"\\n=== Part 2: Verifying Expanded Eq. (22) on Test Director \
+Fields ===\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[0, 0, 1],
+  FrontFaceColor->RGBColor[0, 0, 1],
+  BackFaceColor->RGBColor[0, 0, 1],
+  GraphicsColor->RGBColor[0, 0, 1],
+  FontSize->15,
+  FontWeight->Bold,
+  FontColor->RGBColor[0, 0, 1]]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.0031605572692757`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"67373c41-bbd9-d44d-8b20-66aa56e21598"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residual of Expanded Eq. (22) for theta(x,y) = x^3 (should be \
+0): \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm[
+  "Residual of Expanded Eq. (22) for theta(x,y) = x^3 (should be 0): ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  4.00314403877594*^9, 4.0031443241471252`*^9, {4.0031475411213646`*^9, 
+   4.0031475686149273`*^9}, {4.0031605409482327`*^9, 4.00316055750128*^9}},
+ CellLabel->
+  "During evaluation of \
+In[201]:=",ExpressionUUID->"c7eaa923-e290-f442-a6a5-126386f4b126"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1152, 579.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"06f14351-34e5-6e4e-9c52-fef8389fa551"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 18922, 538, 1284, "Input",ExpressionUUID->"2381432e-a477-584e-8413-3c176a602576"],
+Cell[CellGroupData[{
+Cell[19523, 564, 619, 16, 25, "Print",ExpressionUUID->"6166aea4-8cae-134c-bb1d-df7081e99c75"],
+Cell[20145, 582, 701, 20, 42, "Print",ExpressionUUID->"e60c2d3d-96c7-8e42-b7a9-19d2a80181bb"],
+Cell[20849, 604, 856, 22, 37, "Print",ExpressionUUID->"a2fbab35-c123-6543-8d73-b6301736f1b4"],
+Cell[21708, 628, 698, 20, 42, "Print",ExpressionUUID->"c171d64b-207c-d84f-9f5a-13ff48b459b6"],
+Cell[22409, 650, 1820, 45, 54, "Print",ExpressionUUID->"ef7cea58-ddbe-9c43-8beb-d9250fa73d16"],
+Cell[24232, 697, 733, 21, 42, "Print",ExpressionUUID->"f2fd2348-ee8a-d846-b7db-4e2d1b279cd9"],
+Cell[24968, 720, 1573, 45, 45, "Print",ExpressionUUID->"fff3f042-d5f5-0d4b-9f0b-405673335f5b"],
+Cell[26544, 767, 628, 16, 47, "Print",ExpressionUUID->"67373c41-bbd9-d44d-8b20-66aa56e21598"],
+Cell[27175, 785, 548, 12, 22, "Print",ExpressionUUID->"c7eaa923-e290-f442-a6a5-126386f4b126"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
